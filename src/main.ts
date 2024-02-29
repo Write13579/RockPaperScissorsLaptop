@@ -1,5 +1,5 @@
 let userChoice: string;
-const choices = ["rock", "paper", "scissors"];
+
 const scoreUserShow = document.getElementById(
   "scoreUser"
 ) as HTMLHeadingElement;
@@ -16,6 +16,12 @@ const showCompChoice = document.getElementById(
 
 const result = document.getElementById("result") as HTMLDivElement;
 
+enum Choices {
+  ROCK = "rock",
+  PAPER = "paper",
+  SCISSORS = "scissors",
+}
+
 let user = 0;
 let comp = 0;
 
@@ -23,14 +29,14 @@ function chosenRock() {
   userChoice = "rock";
   showUserChoice.textContent = `Your choice was ${userChoice}`;
   let currentGuess = losuj();
-  if (currentGuess === "rock") {
+  if (currentGuess === Choices.ROCK) {
     draw();
-  } else if (currentGuess === "paper") {
+  } else if (currentGuess === Choices.PAPER) {
     compWin();
-  } else if (currentGuess === "scissors") {
+  } else if (currentGuess === Choices.SCISSORS) {
     userWin();
   } else {
-    console.log("error", losuj(), userChoice);
+    console.log("error");
   }
 }
 
@@ -39,11 +45,11 @@ function chosenPaper() {
   showUserChoice.textContent = `Your choice was ${userChoice}`;
   let currentGuess = losuj();
 
-  if (currentGuess === "paper") {
+  if (currentGuess === Choices.PAPER) {
     draw();
-  } else if (currentGuess === "scissors") {
+  } else if (currentGuess === Choices.SCISSORS) {
     compWin();
-  } else if (currentGuess === "rock") {
+  } else if (currentGuess === Choices.ROCK) {
     userWin();
   } else {
     console.log("error");
@@ -55,11 +61,11 @@ function chosenScissors() {
   showUserChoice.textContent = `Your choice was ${userChoice}`;
   let currentGuess = losuj();
 
-  if (currentGuess === "scissors") {
+  if (currentGuess === Choices.SCISSORS) {
     draw();
-  } else if (currentGuess === "rock") {
+  } else if (currentGuess === Choices.ROCK) {
     compWin();
-  } else if (currentGuess === "paper") {
+  } else if (currentGuess === Choices.PAPER) {
     userWin();
   } else {
     console.log("error");
@@ -68,8 +74,10 @@ function chosenScissors() {
 
 function losuj() {
   let idxLos = Math.floor(Math.random() * 3);
-  showCompChoice.textContent = `Computer choice was ${choices[idxLos]}`;
-  return choices[idxLos];
+  showCompChoice.textContent = `Computer choice was ${
+    Object.values(Choices)[idxLos]
+  }`;
+  return Object.values(Choices)[idxLos] as Choices;
 }
 
 function draw() {
