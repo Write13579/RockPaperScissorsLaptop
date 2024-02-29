@@ -10,13 +10,14 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: row;
+  border-radius: 18px;
 }
 
 #rock,
 #paper,
 #scissors {
   border: white 2px solid;
-  background-color: purple;
+  background-color: hsl(300, 100%, 25%);
   padding: 30px 70px;
   display: flex;
   text-align: center;
@@ -29,12 +30,19 @@ body {
   font-size: 50px;
   height: 120px;
   width: 120px;
+  transition: scale 0.03s ease-in-out, background-color 0.08s ease-in-out;
+}
+
+#rock:hover,
+#paper:hover,
+#scissors:hover {
+  background-color: hsl(300, 100%, 22%);
 }
 
 #rock:active,
 #paper:active,
 #scissors:active {
-  scale: 90%;
+  scale: 94%;
 }
 
 #resetBtn {
@@ -45,8 +53,30 @@ body {
   color: white;
   font-weight: bold;
   border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 div {
   margin-bottom: 20px;
+}
+
+#title {
+  display: flex;
+  justify-content: center;
+  font-style: italic;
+  text-shadow: 5px 5px 5px purple;
+}
+
+#score,
+#info,
+#result {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 25px;
+  font-family: monospace;
 }

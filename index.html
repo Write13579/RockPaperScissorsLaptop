@@ -7,6 +7,7 @@
     <title>Document</title>
   </head>
   <body>
+    <h1 id="title">ROCK-PAPER-SCISSORS GAME</h1>
     <div id="options">
       <button id="rock" onclick="chosenRock()">🪨</button>
       <button id="paper" onclick="chosenPaper()">🧻</button>
@@ -19,12 +20,14 @@
       <h id="compChoice"></h>
     </div>
     <div id="result"></div>
-
+    <hr />
     <div id="score">
-      <hr />
-      <label>User: </label><h id="scoreUser">0</h>
-      <br />
-      <label>Computer: </label><h id="scoreComp">0</h>
+      <div>
+        <span>User: <span id="scoreUser">0</span></span>
+      </div>
+      <div>
+        <span>Computer: <span id="scoreComp">0</span></span>
+      </div>
     </div>
 
     <button id="resetBtn" onclick="resetScores()">reset</button>
