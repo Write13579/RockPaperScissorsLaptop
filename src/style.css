@@ -1,0 +1,38 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+#options {
+  border: 10px solid red;
+  padding: 20px;
+  align-items: center;
+}
+
+#rock, #paper, #scissors{
+  border: white 2px solid;
+  background-color: purple;
+  padding: 20px 30px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  max-width: 100px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#rock:active, #paper:active, #scissors:active{
+  scale: 90%;
+}
+
+#resetBtn {
+  margin-top: 25px;
+  padding: 10px 15px;
+  background-color: red;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+}
